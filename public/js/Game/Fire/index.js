@@ -3,8 +3,8 @@ module.exports = (Listener, cookie) => {
         fps: '0-0',
         fpsDisplay: '?',
         debug: false,
-        decay: 8,
-        firePixelSize: 10,
+        decay: 15,
+        firePixelSize: 20,
         firePixelsArray: [],
         fireWidth: 0,
         fireHeight: 0

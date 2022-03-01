@@ -3,6 +3,7 @@ module.exports = (Listener, cookie) => {
         fps: '0-0',
         fpsDisplay: '?',
         debug: false,
+        fireColor: 40,
         decay: 15,
         firePixelSize: 20,
         firePixelsArray: [],

@@ -7,4 +7,7 @@ module.exports = (ctx, Fire, Listener, cookie) => {
     ctx.fillStyle = 'rgb(200, 200, 200)'
     ctx.font = `bold 10px Arial`
     ctx.fillText(`${Fire.state.fpsDisplay}FPS`, (canvas.width-4)-ctx.measureText(`${Fire.state.fpsDisplay}FPS`).width, 10);
+
+    ctx.fillText('Aperte botões "+" e "-" para mudar a intensidade de fogo', 0, 15);
+    ctx.fillText('Seguire "Shift" e aperte botões "+" e "-" para mudar a cor do fogo', 0, 30);
 }

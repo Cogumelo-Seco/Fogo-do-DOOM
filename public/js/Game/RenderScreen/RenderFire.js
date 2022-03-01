@@ -21,7 +21,7 @@ module.exports = (ctx, Fire, Listener, cookie) => {
                 ctx.font = `bold ${firePixelSize/5}px Arial`
                 ctx.fillText(pixelIndex, X+1, Y+(firePixelSize/5));
             } else {
-                const colorH = Math.round(Fire.state.firePixelsArray[pixelIndex] * 40 / 100);
+                const colorH = Math.round(Fire.state.firePixelsArray[pixelIndex] * Fire.state.fireColor / 100);
                 const colorS = 100;
                 const colorL = Fire.state.firePixelsArray[pixelIndex];
                 const color = `hsl(${colorH}, ${colorS}%, ${colorL}%)`;

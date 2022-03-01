@@ -9,8 +9,6 @@ module.exports = (state) => {
                 let belowPixelFireIntensity = state.firePixelsArray[belowPixelIndex+Math.floor(Math.random()*2)]
                 let newFireIntensity = belowPixelFireIntensity - Math.floor(Math.random()*state.decay)
 
-                if (newFireIntensity == 31) console.log(pixelIndex)
-
                 if (newFireIntensity >= 0) state.firePixelsArray[pixelIndex] = newFireIntensity
             }
         }

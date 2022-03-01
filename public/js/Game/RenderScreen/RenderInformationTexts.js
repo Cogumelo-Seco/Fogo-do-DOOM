@@ -1,4 +1,4 @@
-module.exports = (ctx, Fire, Listener, cookie) => {
+﻿module.exports = (ctx, Fire, Listener, cookie) => {
     if (+new Date()-Fire.state.fps.split('-')[1] > 1000) {
         Fire.state.fpsDisplay = Fire.state.fps.split('-')[0]
         Fire.state.fps = `0-${+new Date()}`
@@ -9,5 +9,5 @@ module.exports = (ctx, Fire, Listener, cookie) => {
     ctx.fillText(`${Fire.state.fpsDisplay}FPS`, (canvas.width-4)-ctx.measureText(`${Fire.state.fpsDisplay}FPS`).width, 10);
 
     ctx.fillText('Aperte botões "+" e "-" para mudar a intensidade de fogo', 0, 15);
-    ctx.fillText('Seguire "Shift" e aperte botões "+" e "-" para mudar a cor do fogo', 0, 30);
+    ctx.fillText('Segure "Shift" e aperte botões "+" e "-" para mudar a cor do fogo', 0, 30);
 }

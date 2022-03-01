@@ -14,6 +14,9 @@ const Page = () => {
     useEffect(() => {
         const Listener = createListener(cookie)
         const Fire = createFire(Listener, cookie)
+        Listener.state.Fire = Fire
+
+        Fire.start()
         
         startRender(Fire, Listener, router, cookie)
     }, [])

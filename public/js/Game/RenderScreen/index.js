@@ -9,6 +9,7 @@ module.exports = function RenderScreen(Fire, Listener, router, cookie) {
     const ctx = canvas.getContext('2d')
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
+    require('./RenderFire')(ctx, Fire, Listener, cookie)
     require('./RenderInformationTexts')(ctx, Fire, Listener, cookie)
 
     let rAF = window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.requestAnimationFrame;

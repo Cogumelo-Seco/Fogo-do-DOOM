@@ -28,10 +28,10 @@ module.exports = (cookie) => {
         if (!state.Fire) return;
         let key = event.key
         
-        if (key == 'z' && !state.keys['Shift'] && state.Fire.state.decay > 2) state.Fire.state.decay -= 1
-        if (key == 'x' && !state.keys['Shift'] && state.Fire.state.decay < 100) state.Fire.state.decay += 1
-        if (key == 'z' && state.keys['Shift'] && state.Fire.state.fireColor < 200) state.Fire.state.fireColor += 1
-        if (key == 'x' && state.keys['Shift'] && state.Fire.state.fireColor > -200) state.Fire.state.fireColor -= 1
+        if (key == 'z' && state.Fire.state.decay > 2) state.Fire.state.decay -= 1
+        if (key == 'x' && state.Fire.state.decay < 100) state.Fire.state.decay += 1
+        if (key == 'Z' && state.Fire.state.fireColor < 200) state.Fire.state.fireColor += 1
+        if (key == 'X' && state.Fire.state.fireColor > -200) state.Fire.state.fireColor -= 1
 
         if (key == 'q') state.Fire.state.clearFire()
         if (key == 'a') state.Fire.state.createFireSource()

@@ -27,7 +27,7 @@ module.exports = (Listener, cookie) => {
 
         setInterval(() => {
             createFirePropagation()
-        }, 50)
+        }, 10)
 
         createFireDataStructure()
         createFireSource()

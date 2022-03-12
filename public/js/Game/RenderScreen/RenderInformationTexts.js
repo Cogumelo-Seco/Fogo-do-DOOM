@@ -11,6 +11,6 @@
     ctx.fillText('Aperte botões "z" e "x" para mudar a intensidade de fogo', 0, 15);
     ctx.fillText('Aperte "q" para limpar o fogo', 0, 30);
     ctx.fillText('Aperte "a" para acender o fogo', 0, 45);
-    ctx.fillText('Segure "Shift" e aperte botões "z" e "x" para mudar a cor do fogo', 0, 60);
+    ctx.fillText('Aperte "c" para mudar a cor do fogo', 0, 60);
     ctx.fillText('Segure "w" e mova o mouse :)', 0, 75);
 }

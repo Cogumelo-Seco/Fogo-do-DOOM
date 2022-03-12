@@ -3,9 +3,9 @@ module.exports = (Listener, cookie) => {
         fps: '0-0',
         fpsDisplay: '?',
         debug: false,
-        fireColor: 40,
-        decay: 10,
-        firePixelSize: 10,
+        fireColor: 20,
+        decay: 15,
+        firePixelSize: 15,
         firePixelsArray: [],
         fireWidth: 0,
         fireHeight: 0
@@ -13,7 +13,7 @@ module.exports = (Listener, cookie) => {
     
     const setPixelFireIntensity = (...props) => require(`./FireFunctions/setPixelFireIntensity`)(state, props)
     const createFireDataStructure = (...props) => require(`./FireFunctions/createFireDataStructure`)(state)
-    const createFireSource = (...props) => require(`./FireFunctions/createFireSource`)(state)
+    const createFireSource = (...props) => require(`./FireFunctions/createFireSource`)(state, setPixelFireIntensity)
     const createFirePropagation = (...props) => require(`./FireFunctions/calculateFirePropagation`)(state, setPixelFireIntensity)
     const clearFire = (...props) => require(`./FireFunctions/clearFire`)(state, setPixelFireIntensity)
 

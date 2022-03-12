@@ -2,9 +2,6 @@ module.exports = (state, setPixelFireIntensity) => {
     for (let column = 0; column < state.fireWidth; column++) {
         for (let row = 0; row < state.fireHeight; row++) {
             let pixelIndex = column + (state.fireWidth * (row-1))
-
-            if (pixelIndex == 200) console.log(row)
-
             let belowPixelIndex = pixelIndex + state.fireWidth
 
             if (belowPixelIndex <= state.fireWidth*state.fireHeight) {

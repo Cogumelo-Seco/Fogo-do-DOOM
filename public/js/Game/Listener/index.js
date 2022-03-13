@@ -5,7 +5,7 @@ module.exports = (cookie) => {
     }
 
     document.onmousemove = (event) => {
-        if (!state.Fire || !state.keys['w']) return
+        if (!state.Fire || !state.keys['KeyW']) return
         
         let pixelIndexX = Math.floor((Math.floor(event.x)/state.Fire.state.firePixelSize)/state.Fire.state.fireWidth*state.Fire.state.fireWidth)
         let pixelIndexY = Math.floor((Math.floor(event.y)/state.Fire.state.firePixelSize)/state.Fire.state.fireHeight*state.Fire.state.fireHeight)

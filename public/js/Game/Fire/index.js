@@ -19,6 +19,7 @@ module.exports = (Listener, cookie) => {
 
     state.setPixelFireIntensity = setPixelFireIntensity
     state.createFireSource = createFireSource
+    state.createFireDataStructure = createFireDataStructure
     state.clearFire = clearFire
     
     const start = async () => {
@@ -27,7 +28,7 @@ module.exports = (Listener, cookie) => {
 
         setInterval(() => {
             createFirePropagation()
-        }, 10)
+        }, 50)
 
         createFireDataStructure()
         createFireSource()

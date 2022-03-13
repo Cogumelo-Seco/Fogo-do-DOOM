@@ -17,24 +17,42 @@ module.exports = (cookie) => {
     }
 
     document.addEventListener('keydown', (event) => {
-        state.keys[event.key] = true
+        state.keys[event.code] = true
         handleKeys(event)
     })
     document.addEventListener('keyup', (event) => {
-        state.keys[event.key] = false
+        state.keys[event.code] = false
     })
 
     function handleKeys(event) {
         if (!state.Fire) return;
-        let key = event.key
+        let key = event.code
         
-        if (key == 'z' && state.Fire.state.decay > 2) state.Fire.state.decay -= 1
-        if (key == 'x' && state.Fire.state.decay < 100) state.Fire.state.decay += 1
-        if (key == 'c') state.Fire.state.fireColor = state.Fire.state.fireColor >= 360 ? 0 : state.Fire.state.fireColor+1
+        if (key == 'KeyZ' && state.Fire.state.decay > 3) state.Fire.state.decay -= 1
+        if (key == 'KeyX' && state.Fire.state.decay < 100) state.Fire.state.decay += 1
+        if (key == 'KeyC') state.Fire.state.fireColor = state.Fire.state.fireColor >= 360 ? 0 : state.Fire.state.fireColor+1
 
-        if (key == 'q') state.Fire.state.clearFire()
-        if (key == 'a') state.Fire.state.createFireSource()
-        if (key == 's') state.Fire.state.debug = state.Fire.state.debug ? false : true
+        if (key == 'KeyQ') state.Fire.state.clearFire()
+        if (key == 'KeyA') state.Fire.state.createFireSource()
+        if (key == 'KeyS') state.Fire.state.debug = state.Fire.state.debug ? false : true
+        if (key == 'KeyE' && state.Fire.state.firePixelSize > 10) {
+            state.Fire.state.firePixelSize -= 1
+            state.Fire.state.decay = state.Fire.state.firePixelSize
+            state.Fire.state.fireWidth = Math.floor(window.innerWidth/state.Fire.state.firePixelSize)+1
+            state.Fire.state.fireHeight = Math.floor(window.innerHeight/state.Fire.state.firePixelSize)+1
+            state.Fire.state.firePixelsArray = []
+            state.Fire.state.createFireDataStructure()
+            state.Fire.state.createFireSource()
+        }
+        if (key == 'KeyR' && state.Fire.state.firePixelSize < 50) {
+            state.Fire.state.firePixelSize += 1
+            state.Fire.state.decay = state.Fire.state.firePixelSize
+            state.Fire.state.fireWidth = Math.floor(window.innerWidth/state.Fire.state.firePixelSize)+1
+            state.Fire.state.fireHeight = Math.floor(window.innerHeight/state.Fire.state.firePixelSize)+1
+            state.Fire.state.firePixelsArray = []
+            state.Fire.state.createFireDataStructure()
+            state.Fire.state.createFireSource()
+        }
     }
 
     return {

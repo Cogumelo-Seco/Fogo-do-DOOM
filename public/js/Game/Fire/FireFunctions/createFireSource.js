@@ -1,8 +1,5 @@
 module.exports = (state, setPixelFireIntensity) => {
-    for (let column = 0; column <= state.fireWidth; column++) {
-        let overflowPixelIndex = state.fireWidth * state.fireHeight
-        let pixelIndex = (overflowPixelIndex - state.fireWidth) + column
-
-        setPixelFireIntensity(pixelIndex, 100)
+    for (let column = 0;column < state.fireWidth;column++) {
+        state.firePixelsArray[state.firePixelsArray.length-1][column] = 100
     }
 }

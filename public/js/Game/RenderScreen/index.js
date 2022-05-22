@@ -1,4 +1,4 @@
-module.exports = function RenderScreen(Fire, Listener, router, cookie) {
+module.exports = async function RenderScreen(Fire, Listener, router, cookie) {
     const fps = Number(Fire.state.fps.split('-')[0])
     Fire.state.fps = `${fps + 1}-${Fire.state.fps.split('-')[1]}`
     
@@ -11,9 +11,10 @@ module.exports = function RenderScreen(Fire, Listener, router, cookie) {
 
     require('./RenderFire')(ctx, Fire, Listener, cookie)
     require('./RenderInformationTexts')(ctx, Fire, Listener, cookie)
+    require('./RenderMouse')(ctx, Fire, Listener, cookie)
 
-    let rAF = window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.requestAnimationFrame;
-    rAF(() => {
-        RenderScreen(Fire, Listener, router, cookie)
-    })
+    /*let rAF = window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.requestAnimationFrame;
+    rAF(() => RenderScreen(Fire, Listener, router, cookie))*/
+
+    setTimeout(async() => RenderScreen(Fire, Listener, router, cookie), 0)
 }

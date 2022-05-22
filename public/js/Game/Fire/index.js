@@ -3,6 +3,7 @@ module.exports = (Listener, cookie) => {
         fps: '0-0',
         fpsDisplay: '?',
         debug: false,
+        images: {},
         fireColor: 20,
         decay: 15,
         firePixelSize: 15,
@@ -11,19 +12,17 @@ module.exports = (Listener, cookie) => {
         fireHeight: 0
     }
     
-    const setPixelFireIntensity = (...props) => require(`./FireFunctions/setPixelFireIntensity`)(state, props)
     const createFireDataStructure = (...props) => require(`./FireFunctions/createFireDataStructure`)(state)
-    const createFireSource = (...props) => require(`./FireFunctions/createFireSource`)(state, setPixelFireIntensity)
-    const createFirePropagation = (...props) => require(`./FireFunctions/calculateFirePropagation`)(state, setPixelFireIntensity)
-    const clearFire = (...props) => require(`./FireFunctions/clearFire`)(state, setPixelFireIntensity)
+    const createFireSource = (...props) => require(`./FireFunctions/createFireSource`)(state)
+    const createFirePropagation = (...props) => require(`./FireFunctions/calculateFirePropagation`)(state)
+    const clearFire = (...props) => require(`./FireFunctions/clearFire`)(state)
 
-    state.setPixelFireIntensity = setPixelFireIntensity
     state.createFireSource = createFireSource
     state.createFireDataStructure = createFireDataStructure
     state.clearFire = clearFire
     
     const start = async () => {
-        state.fireWidth = Math.floor(window.innerWidth/state.firePixelSize)+1
+        state.fireWidth = Math.floor(window.innerWidth/state.firePixelSize)*1.1
         state.fireHeight = Math.floor(window.innerHeight/state.firePixelSize)+1
 
         setInterval(() => {

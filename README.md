@@ -4,4 +4,8 @@ Este repositório é de uma recriação do fogo do DOOM em javascript usando can
 
 Esta é minha versão do fogo, ideia disso veio do canal [Filipe Deschamps](https://www.youtube.com/c/FilipeDeschamps)
 
+<p align="center">
+  <img src="GIF.gif" width="440" />
+</p>
+
 #### Antes de copiar qualquer coisa deste repositório leia a [licença deste repositório](https://github.com/Cogumelo-Seco/Alpha-Site/blob/main/LICENSE).
